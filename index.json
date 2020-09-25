@@ -1,0 +1,85 @@
+[
+{
+	"uri": "7own.github.io/basics/",
+	"title": "Cheatsheet",
+	"tags": [],
+	"description": "",
+	"content": "Cheatsheet Pentest help This section will display all information you need for penetrate a network !\n"
+},
+{
+	"uri": "7own.github.io/writeup/htb/",
+	"title": "HTB",
+	"tags": [],
+	"description": "",
+	"content": "HTB Writeup "
+},
+{
+	"uri": "7own.github.io/basics/linux/",
+	"title": "Linux Cheatsheet",
+	"tags": [],
+	"description": "",
+	"content": "This section will display all information you need for penetrate a network !\n"
+},
+{
+	"uri": "7own.github.io/basics/linux/nmap/",
+	"title": "NMAP Cheatsheet",
+	"tags": [],
+	"description": "",
+	"content": "This section will display all information you need for penetrate a network !\n"
+},
+{
+	"uri": "7own.github.io/writeup/htb/passage/",
+	"title": "Passage",
+	"tags": ["base64", "decrypt", "cyberchef"],
+	"description": "",
+	"content": "Let\u0026rsquo;s start with NMAP on the IP of the box 10.10.10.206 : As we can see, HTTP is open and SSH too. Let\u0026rsquo;s check the website : At the end of the webpage we can see a Copyright : After googling CuteNews, we can see that there is a CMS for news feed. Let\u0026rsquo;s check if there is any exploit on it : After checking the exploit, we can see that is pointing to a specific path :\n{ip}/CuteNews/cdata/users/lines Let\u0026rsquo;s check if we can access to the CuteNews folder : admin/admin don\u0026rsquo;t work, but we can register an account. We can access to the pannel but we can\u0026rsquo;t do nothing on it.\nLet\u0026rsquo;s check if the finded exploit can open us a door : We can get a shell from the machine : Let\u0026rsquo;s make a webshell and upload it :\ncp /usr/share/webshells/php/php-reverse-shell.php ~/boxes/passage ---\u0026gt; Modify the IP Let\u0026rsquo;s check if we can access to the upload dir and run the reverse shell : Now, we need to enumerate the accessible file to see if we have any password for an user. After some hours of enumeration, i find some file interresting : cat lines On the last file \u0026ldquo;lines\u0026rdquo;, the hash seems to be a base64, let\u0026rsquo;s try to decrypt it :\necho 'base64 string' | base64 -d We find a password in the LINES file :  NB : To check the hash type or decrypt it, you can use CyberChef website. There is a nice online tool.  Now we will try to find what\u0026rsquo;s is the type of hash with CyberChef :  It seems to be a SHA256 hash.\n Let\u0026rsquo;s try to decrypt all base64 line in this file, and decrypt the \u0026ldquo;pass\u0026rdquo; with SHA256 Decrypter  Not able to decrypt the admin pass (NADAV)\n For Paul User (where is present on the machine /home/) Account found ------- Username : paul Password : atlanta1 Now, we got creds and we can try to login into ssh on the machine.\n Access denied by ssh because of public key.\n OK. No problem. We know that we have an access with the python exploit \u0026ldquo;CuteNews\u0026rdquo;. We could try to execute the exploit again, \u0026ldquo;su paul\u0026rdquo;, enter the password and see what happend.\n BINGO ! We are logged in with paul user.\n Let\u0026rsquo;s implement SSH public key to the authorized_keys file to get a full shell to the machine.  Mmmh\u0026hellip; Strange, we already have a public SSH key for Nadav user who is the admin. Will take a look on it later.\n Generate a SSH key : ssh-keygen -t rsa Let\u0026rsquo;s try to SSH on 10.10.10.206 :  Well ! Take the user.txt hash and go ahead ! Let\u0026rsquo;s check for SSH key of Nadav.\n  Too simple to get the admin account. We can see that this user is a member of many groups. Let\u0026rsquo;s enumerate !\n Enumerate the process --------------------- ps -aux After some googling for USBCREATOR privilege escalation, i find this : Try the command :\ngdbus call --system --dest com.ubuntu.USBCreator --object-path /com/ubuntu/USBCreator --method com.ubuntu.USBCreator.Image /root/.ssh/id_rsa /tmp/pwn true This is the end of this box. ENJOY and KEEP TRY HARDER !\nTAGS : ------ Lot of enumeration, hash decrypt + analyze (Base64 + SHA256) Knowledge acquiered : --------------------- Recognize Base64 and decrypt it with ***base64 -d “KEY”*** command Find a new tool named CyberChef who can analyze hash type, and decrypt it. "
+},
+{
+	"uri": "7own.github.io/writeup/",
+	"title": "Write up",
+	"tags": [],
+	"description": "",
+	"content": "Section for Pentest Writeup "
+},
+{
+	"uri": "7own.github.io/tags/base64/",
+	"title": "base64",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "7own.github.io/tags/cyberchef/",
+	"title": "cyberchef",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "7own.github.io/tags/decrypt/",
+	"title": "decrypt",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "7own.github.io/",
+	"title": "HomePage",
+	"tags": [],
+	"description": "",
+	"content": "Test the homepage display\n"
+},
+{
+	"uri": "7own.github.io/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "7own.github.io/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
