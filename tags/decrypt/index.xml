@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>decrypt on 7own</title>
-    <link>7own.github.io/tags/decrypt/</link>
+    <link>/tags/decrypt/</link>
     <description>Recent content in decrypt on 7own</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Sep 2020 13:56:26 -0400</lastBuildDate>
     
-	<atom:link href="7own.github.io/tags/decrypt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/decrypt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Passage</title>
-      <link>7own.github.io/writeup/htb/passage/</link>
+      <link>/writeup/htb/passage/</link>
       <pubDate>Tue, 22 Sep 2020 13:56:26 -0400</pubDate>
       
-      <guid>7own.github.io/writeup/htb/passage/</guid>
+      <guid>/writeup/htb/passage/</guid>
       <description>Let&amp;rsquo;s start with NMAP on the IP of the box 10.10.10.206 : As we can see, HTTP is open and SSH too. Let&amp;rsquo;s check the website : At the end of the webpage we can see a Copyright : After googling CuteNews, we can see that there is a CMS for news feed. Let&amp;rsquo;s check if there is any exploit on it : After checking the exploit, we can see that is pointing to a specific path :</description>
     </item>
     

@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 7own</title>
-    <link>7own.github.io/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on 7own</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Sep 2020 13:56:26 -0400</lastBuildDate>
     
-	<atom:link href="7own.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>base64</title>
-      <link>7own.github.io/tags/base64/</link>
+      <link>/tags/base64/</link>
       <pubDate>Tue, 22 Sep 2020 13:56:26 -0400</pubDate>
       
-      <guid>7own.github.io/tags/base64/</guid>
+      <guid>/tags/base64/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cyberchef</title>
-      <link>7own.github.io/tags/cyberchef/</link>
+      <link>/tags/cyberchef/</link>
       <pubDate>Tue, 22 Sep 2020 13:56:26 -0400</pubDate>
       
-      <guid>7own.github.io/tags/cyberchef/</guid>
+      <guid>/tags/cyberchef/</guid>
       <description></description>
     </item>
     
     <item>
       <title>decrypt</title>
-      <link>7own.github.io/tags/decrypt/</link>
+      <link>/tags/decrypt/</link>
       <pubDate>Tue, 22 Sep 2020 13:56:26 -0400</pubDate>
       
-      <guid>7own.github.io/tags/decrypt/</guid>
+      <guid>/tags/decrypt/</guid>
       <description></description>
     </item>
     
