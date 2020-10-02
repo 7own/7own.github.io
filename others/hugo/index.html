@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Cheatsheet :: 7own</title>
+    <title>Hugo help :: 7own</title>
 
     
     <link href="/css/nucleus.css?1601608099" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/basics/">
+  <body class="" data-url="/others/hugo/">
     <nav id="sidebar" class="">
 
 
@@ -79,8 +79,8 @@
   
     
     <li data-nav-id="/basics/" title="Cheatsheet" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/basics/">
@@ -715,7 +715,7 @@
   
     
     <li data-nav-id="/others/" title="Others" class="dd-item 
-        
+        parent
         
         
         ">
@@ -770,8 +770,8 @@
   
     
     <li data-nav-id="/others/hugo/" title="Hugo help" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/others/hugo/">
@@ -837,6 +837,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -847,7 +849,13 @@
             
           
           
-            <a href='/'>HomePage</a> > Cheatsheet
+            
+            
+          
+          
+            <a href='/'>HomePage</a> > <a href='/others/'>Others</a> > Hugo help
+          
+        
           
         
           
@@ -856,6 +864,13 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -863,17 +878,43 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Hugo help
+            </h1>
           
 
         
 
 
 
-	<h1 id="cheatsheet">Cheatsheet</h1>
-<p>This section will display all help you need to penetrate a network !</p>
+	<p>Create a new chapiter</p>
+<pre><code>hugo new --kind chapter basics/_index.md
+</code></pre><p>Create content page</p>
+<pre><code>hugo new basics/first-content.md
+hugo new basics/second-content/_index.md
+</code></pre><p>Build the website</p>
+<pre><code>hugo
+</code></pre><p>Changer de couleur theme</p>
+<pre><code>[params]
+  # Change default color scheme with a variant one. Can be &quot;red&quot;, &quot;blue&quot;, &quot;green&quot;.
+  themeVariant = &quot;green&quot;
+</code></pre><p>Quote en italique</p>
+<blockquote>
+<p>This is a quote</p>
+</blockquote>
+<p>Afficher en mode code</p>
+<pre><code>There is a code an nothing can do nothing
+</code></pre><p>Insérer une image
+<img src="/images/logo.png" alt="Minion">
+&mdash;&gt; Resize
+<img src="https://octodex.github.com/images/minion.png?height=50px&amp;width=300px" alt="Minion"></p>
+<p>Insérer nouveau logo
+<!-- raw HTML omitted --></p>
+<p>Texte avec attribute dans logo</p>
+<!-- raw HTML omitted -->
 
 
 
@@ -883,8 +924,6 @@
 	
 </footer>
 
-        
-            </div> 
         
         </div>
         
@@ -916,108 +955,8 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1055,57 +994,6 @@
 
                     
                     
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                         
                     
                     
@@ -1127,6 +1015,9 @@
             
         
                     
+            
+        
+                    
                         
             
             
@@ -1142,6 +1033,24 @@
                     
             
         
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
                     
                         
             
@@ -1206,45 +1115,6 @@
             
         
                     
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
                         
             
             
@@ -1257,9 +1127,6 @@
                     
                     
 
-                    
-            
-        
                     
             
         
@@ -1302,6 +1169,182 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
