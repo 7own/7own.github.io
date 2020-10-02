@@ -1,10 +1,115 @@
 [
 {
+	"uri": "/networking/cisco/bgp/",
+	"title": "BGP",
+	"tags": [],
+	"description": "",
+	"content": "TODO : - QPPB - Apply QOS "
+},
+{
 	"uri": "/basics/",
 	"title": "Cheatsheet",
 	"tags": [],
 	"description": "",
-	"content": "Cheatsheet Pentest help This section will display all information you need for penetrate a network !\n"
+	"content": "Cheatsheet This section will display all help you need to penetrate a network !\n"
+},
+{
+	"uri": "/networking/fortinet/debug/commands/",
+	"title": "CLI",
+	"tags": [],
+	"description": "",
+	"content": "TODO : - HA debug + group id on layer 2 link "
+},
+{
+	"uri": "/others/github/",
+	"title": "Github",
+	"tags": [],
+	"description": "",
+	"content": "Github upload site Step-by-step Instructions\n Create a (e.g. blog) repository on GitHub. \u0026ndash;\u0026gt; This repository will contain Hugo’s content and other source files. Create a .github.io GitHub repository. This is the repository that will contain the fully rendered version of your Hugo website.  git clone \u0026lt;YOUR-PROJECT-URL\u0026gt; \u0026amp;\u0026amp; cd \u0026lt;YOUR-PROJECT\u0026gt; Paste your existing Hugo project into the new local repository. Make sure your website works locally (hugo server or hugo server -t ) and open your browser to http://localhost:1313. Once you are happy with the results: Press Ctrl+C to kill the server Before proceeding run rm -rf public to completely remove the public directory\ngit submodule add -b master https://github.com/\u0026lt;USERNAME\u0026gt;/\u0026lt;USERNAME\u0026gt;.github.io.git public. This creates a git submodule. Now when you run the hugo command to build your site to public, the created public directory will have a different remote origin (i.e. hosted GitHub repository). Make sure the baseURL in your config file is updated with: .github.io Put it Into a Script\nYou’re almost done. In order to automate next steps create a deploy.sh script. You can also make it executable with chmod +x deploy.sh. The following are the contents of the deploy.sh script:\n#!/bin/sh # If a command fails then the deploy stops set -e printf \u0026quot;\\033[0;32mDeploying updates to GitHub...\\033[0m\\n\u0026quot; # Build the project. hugo # if using a theme, replace with `hugo -t \u0026lt;YOURTHEME\u0026gt;` # Go To Public folder cd public # Add changes to git. git add . # Commit changes. msg=\u0026quot;rebuilding site $(date)\u0026quot; if [ -n \u0026quot;$*\u0026quot; ]; then msg=\u0026quot;$*\u0026quot; fi git commit -m \u0026quot;$msg\u0026quot; # Push source and build repos. git push origin master You can then run ./deploy.sh \u0026ldquo;Your optional commit message\u0026rdquo; to send changes to .github.io. Note that you likely will want to commit changes to your repository as well. That’s it! Your personal page should be up and running at https://.github.io within a couple minutes.\n"
+},
+{
+	"uri": "/networking/fortinet/sdwan/",
+	"title": "SD-WAN",
+	"tags": [],
+	"description": "",
+	"content": "TODO : - 6.4 Functionnality - CLI - Help "
+},
+{
+	"uri": "/networking/fortinet/advpn/",
+	"title": "AD-VPN",
+	"tags": [],
+	"description": "",
+	"content": "TODO : - Network architecture - BGP - Debugging "
+},
+{
+	"uri": "/networking/cisco/",
+	"title": "Cisco",
+	"tags": [],
+	"description": "",
+	"content": "TODO : - QOS - IP SEC - BGP - Netflow - Route map - Debug scripts "
+},
+{
+	"uri": "/networking/",
+	"title": "Networking",
+	"tags": [],
+	"description": "",
+	"content": "Networking resources "
+},
+{
+	"uri": "/networking/cisco/qos/",
+	"title": "QOS",
+	"tags": [],
+	"description": "",
+	"content": "TODO : - DSCP - Apply QOS "
+},
+{
+	"uri": "/networking/fortinet/debug/",
+	"title": "Debugging",
+	"tags": [],
+	"description": "",
+	"content": "TODO : - FSSO debug - HA debug + group id on layer 2 link - Basic commands (packet sniffer, session, policy, link-monitor...) "
+},
+{
+	"uri": "/networking/fortinet/debug/fsso/",
+	"title": "FSSO",
+	"tags": [],
+	"description": "",
+	"content": "TODO : - FSSO debug "
+},
+{
+	"uri": "/networking/fortinet/debug/ha/",
+	"title": "HA",
+	"tags": [],
+	"description": "",
+	"content": "TODO : - HA debug + group id on layer 2 link "
+},
+{
+	"uri": "/networking/cisco/netflow/",
+	"title": "Netflow",
+	"tags": [],
+	"description": "",
+	"content": "TODO : - Accounting - Apply Netflow and commands "
+},
+{
+	"uri": "/writeup/",
+	"title": "Write up",
+	"tags": [],
+	"description": "",
+	"content": "Section for Pentest Writeup "
+},
+{
+	"uri": "/networking/cisco/ipsec/",
+	"title": "IPSEC",
+	"tags": [],
+	"description": "",
+	"content": "TODO : - Cryptomap - Troubleshoot - ASA configuration "
+},
+{
+	"uri": "/others/",
+	"title": "Others",
+	"tags": [],
+	"description": "",
+	"content": "Loose thing  Hugo help  "
 },
 {
 	"uri": "/writeup/htb/",
@@ -18,14 +123,7 @@
 	"title": "Linux Cheatsheet",
 	"tags": [],
 	"description": "",
-	"content": "This section will display all information you need for penetrate a network !\n"
-},
-{
-	"uri": "/basics/linux/nmap/",
-	"title": "NMAP Cheatsheet",
-	"tags": [],
-	"description": "",
-	"content": "This section will display all information you need for penetrate a network !\n"
+	"content": "Linux commands to enumerate a machine.\nWriting in progress. "
 },
 {
 	"uri": "/writeup/htb/passage/",
@@ -35,11 +133,32 @@
 	"content": "Let\u0026rsquo;s start with NMAP on the IP of the box 10.10.10.206 : As we can see, HTTP is open and SSH too. Let\u0026rsquo;s check the website : At the end of the webpage we can see a Copyright : After googling CuteNews, we can see that there is a CMS for news feed. Let\u0026rsquo;s check if there is any exploit on it : After checking the exploit, we can see that is pointing to a specific path :\n{ip}/CuteNews/cdata/users/lines Let\u0026rsquo;s check if we can access to the CuteNews folder : admin/admin don\u0026rsquo;t work, but we can register an account. We can access to the pannel but we can\u0026rsquo;t do nothing on it.\nLet\u0026rsquo;s check if the finded exploit can open us a door : We can get a shell from the machine : Let\u0026rsquo;s make a webshell and upload it :\ncp /usr/share/webshells/php/php-reverse-shell.php ~/boxes/passage ---\u0026gt; Modify the IP Let\u0026rsquo;s check if we can access to the upload dir and run the reverse shell : Now, we need to enumerate the accessible file to see if we have any password for an user. After some hours of enumeration, i find some file interresting : cat lines On the last file \u0026ldquo;lines\u0026rdquo;, the hash seems to be a base64, let\u0026rsquo;s try to decrypt it :\necho 'base64 string' | base64 -d We find a password in the LINES file :  NB : To check the hash type or decrypt it, you can use CyberChef website. There is a nice online tool.  Now we will try to find what\u0026rsquo;s is the type of hash with CyberChef :  It seems to be a SHA256 hash.\n Let\u0026rsquo;s try to decrypt all base64 line in this file, and decrypt the \u0026ldquo;pass\u0026rdquo; with SHA256 Decrypter  Not able to decrypt the admin pass (NADAV)\n For Paul User (where is present on the machine /home/) Account found ------- Username : paul Password : atlanta1 Now, we got creds and we can try to login into ssh on the machine.\n Access denied by ssh because of public key.\n OK. No problem. We know that we have an access with the python exploit \u0026ldquo;CuteNews\u0026rdquo;. We could try to execute the exploit again, \u0026ldquo;su paul\u0026rdquo;, enter the password and see what happend.\n BINGO ! We are logged in with paul user.\n Let\u0026rsquo;s implement SSH public key to the authorized_keys file to get a full shell to the machine.  Mmmh\u0026hellip; Strange, we already have a public SSH key for Nadav user who is the admin. Will take a look on it later.\n Generate a SSH key : ssh-keygen -t rsa Let\u0026rsquo;s try to SSH on 10.10.10.206 :  Well ! Take the user.txt hash and go ahead ! Let\u0026rsquo;s check for SSH key of Nadav.\n  Too simple to get the admin account. We can see that this user is a member of many groups. Let\u0026rsquo;s enumerate !\n Enumerate the process --------------------- ps -aux After some googling for USBCREATOR privilege escalation, i find this : Try the command :\ngdbus call --system --dest com.ubuntu.USBCreator --object-path /com/ubuntu/USBCreator --method com.ubuntu.USBCreator.Image /root/.ssh/id_rsa /tmp/pwn true This is the end of this box. ENJOY and KEEP TRY HARDER !\nTAGS : ------ Lot of enumeration, hash decrypt + analyze (Base64 + SHA256) Knowledge acquiered : --------------------- Recognize Base64 and decrypt it with ***base64 -d “KEY”*** command Find a new tool named CyberChef who can analyze hash type, and decrypt it. "
 },
 {
-	"uri": "/writeup/",
-	"title": "Write up",
+	"uri": "/basics/windows/ps/",
+	"title": "Powershell",
 	"tags": [],
 	"description": "",
-	"content": "Section for Pentest Writeup "
+	"content": "Windows commands to enumerate a machine.\nWriting in progress. "
+},
+{
+	"uri": "/basics/windows/",
+	"title": "Windows Cheatsheet",
+	"tags": [],
+	"description": "",
+	"content": "Windows commands to enumerate a machine.\nWriting in progress. "
+},
+{
+	"uri": "/networking/fortinet/",
+	"title": "Fortigate",
+	"tags": [],
+	"description": "",
+	"content": "TODO : - ADVPN - SD-WAN - HA - Debug scripts "
+},
+{
+	"uri": "/basics/python/",
+	"title": "Python",
+	"tags": [],
+	"description": "",
+	"content": "Python short code cheatsheet.\nWriting in progress. "
 },
 {
 	"uri": "/tags/base64/",
@@ -67,7 +186,7 @@
 	"title": "HomePage",
 	"tags": [],
 	"description": "",
-	"content": "Test the homepage display\n"
+	"content": "Update incoming HTB Writeup Next update in progress :\n Cache Blunder Fuse Tabby SneakyMailer Buff OpenKeyS Omni Passage  Networking content Fortigate :\n SD-WAN (implementation \u0026amp; debug) AD-VPN (implementation \u0026amp; debug) Basic and advanced debugging commands  "
 },
 {
 	"uri": "/tags/",

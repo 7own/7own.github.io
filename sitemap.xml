@@ -3,7 +3,82 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/networking/cisco/bgp/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/basics/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/fortinet/debug/commands/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/others/github/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/fortinet/sdwan/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/fortinet/advpn/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/cisco/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/cisco/qos/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/fortinet/debug/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/fortinet/debug/fsso/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/fortinet/debug/ha/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/cisco/netflow/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/writeup/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/cisco/ipsec/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/others/</loc>
     <lastmod>2020-09-22T13:56:26-04:00</lastmod>
   </url>
   
@@ -18,17 +93,27 @@
   </url>
   
   <url>
-    <loc>/basics/linux/nmap/</loc>
-    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/writeup/htb/passage/</loc>
     <lastmod>2020-09-22T13:56:26-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/writeup/</loc>
+    <loc>/basics/windows/ps/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/basics/windows/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/networking/fortinet/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/basics/python/</loc>
     <lastmod>2020-09-22T13:56:26-04:00</lastmod>
   </url>
   
