@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lxd privesc on 7own</title>
+    <link>/tags/lxd-privesc/</link>
+    <description>Recent content in lxd privesc on 7own</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Sep 2020 13:56:26 -0400</lastBuildDate><atom:link href="/tags/lxd-privesc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tabby</title>
+      <link>/writeup/htb/tabby/</link>
+      <pubDate>Tue, 22 Sep 2020 13:56:26 -0400</pubDate>
+      
+      <guid>/writeup/htb/tabby/</guid>
+      <description>Let&amp;rsquo;s start with NMAP on the IP of the box 10.10.10.194 : As we can see, some interesting protocols:
+22 / SSH 80 / HTTP 8080 / TOMCAT Let&amp;rsquo;s check the website : We can observe a call to a file in the url : news.php?file=statement Try LFI, jackpot Find usernames :
+ash lxd tomcat After google research, i&amp;rsquo;ve find the path of the tomcat-users.xml file
+/usr/share/tomcat9/etc/tomcat-users.xml First user :</description>
+    </item>
+    
+  </channel>
+</rss>

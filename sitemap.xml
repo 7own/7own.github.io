@@ -108,6 +108,11 @@
   </url>
   
   <url>
+    <loc>/writeup/htb/tabby/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/basics/windows/</loc>
     <lastmod>2020-09-22T13:56:26-04:00</lastmod>
   </url>
@@ -143,7 +148,22 @@
   </url>
   
   <url>
+    <loc>/tags/lfi/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/lxd-privesc/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
+    <lastmod>2020-09-22T13:56:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/tomcat/</loc>
     <lastmod>2020-09-22T13:56:26-04:00</lastmod>
   </url>
   

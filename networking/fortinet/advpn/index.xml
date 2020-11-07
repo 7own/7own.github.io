@@ -6,10 +6,6 @@
     <description>Recent content in AD-VPN on 7own</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2020 13:56:26 -0400</lastBuildDate>
-    
-	<atom:link href="/networking/fortinet/advpn/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 22 Sep 2020 13:56:26 -0400</lastBuildDate><atom:link href="/networking/fortinet/advpn/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

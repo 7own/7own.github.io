@@ -147,6 +147,13 @@
 	"content": "Windows commands to enumerate a machine.\nWriting in progress. "
 },
 {
+	"uri": "/writeup/htb/tabby/",
+	"title": "Tabby",
+	"tags": ["LFI", "tomcat", "lxd privesc"],
+	"description": "",
+	"content": "Let\u0026rsquo;s start with NMAP on the IP of the box 10.10.10.194 : As we can see, some interesting protocols:\n22 / SSH 80 / HTTP 8080 / TOMCAT Let\u0026rsquo;s check the website : We can observe a call to a file in the url : news.php?file=statement Try LFI, jackpot Find usernames :\nash lxd tomcat After google research, i\u0026rsquo;ve find the path of the tomcat-users.xml file\n/usr/share/tomcat9/etc/tomcat-users.xml First user :\ntomcat:$3cureP4s5w0rd123! Since we have tomcat admin, we can send a payload to get a reverse shell : Upload this payload to Tomcat server And check if the webapp is correctly installed There is time to run the payload and get the reverse shell After some enumeration, we can see backup archive (zip). We will try to download them and see if we can find something interresting The archive is protected by a password. fcrackzip can help us with this\nfcrackzip -u -D -p /usr/share/wordlists/rockyou.txt 16162020_backup.zip I\u0026rsquo;ve checked the backup and there is nothing. Try to access to ash account. ash:admin@it User pwnd, let\u0026rsquo;s get root. With \u0026ldquo;id\u0026rdquo; we can see that ash belong to lxd group. A privesc is possible with it. SOURCES : https://www.hackingarticles.in/lxd-privilege-escalation/ https://github.com/saghul/lxd-alpine-builder/blob/master/build-alpine I tried to import lxc image over the reverse shell and it doesn\u0026rsquo;t work. So i\u0026rsquo;ve create and add /home/ash/.ssh/authorized_keys Let\u0026rsquo;s finish the procedure :\n Just for be sure :  Listed command :\nlxc init evil default -c security.privileged=true lxc config device add default mydevice disk source=/ path=/mnt/root recursive=true lxc start default lxc exec default /bin/sh The root below is the root of the image. We\u0026rsquo;ve mount the real root directory, so let\u0026rsquo;s check if we have access to ssh key Getting the root This is the end of this box. ENJOY and KEEP TRY HARDER !\nTAGS : ------ Local file inclusion, lxc and lxd privesc, crack zip, tomcat investigation Knowledge acquiered : --------------------- Local file inclusion breachs are classics. LXC and LXD privilege escalation is interesting and the most important part in this box. First use of Tomcat, learned more about how to deploy and run a webapp. "
+},
+{
 	"uri": "/basics/windows/",
 	"title": "Windows Cheatsheet",
 	"tags": [],
@@ -196,8 +203,29 @@
 	"content": "Update incoming HTB Writeup Next update in progress :\n Cache Blunder Fuse Tabby SneakyMailer Buff OpenKeyS Omni Passage  Networking content Fortigate :\n SD-WAN (implementation \u0026amp; debug) AD-VPN (implementation \u0026amp; debug) Basic and advanced debugging commands  "
 },
 {
+	"uri": "/tags/lfi/",
+	"title": "LFI",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/lxd-privesc/",
+	"title": "lxd privesc",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "/tags/",
 	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/tomcat/",
+	"title": "tomcat",
 	"tags": [],
 	"description": "",
 	"content": ""

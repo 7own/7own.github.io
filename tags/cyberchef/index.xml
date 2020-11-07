@@ -6,11 +6,7 @@
     <description>Recent content in cyberchef on 7own</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2020 13:56:26 -0400</lastBuildDate>
-    
-	<atom:link href="/tags/cyberchef/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 22 Sep 2020 13:56:26 -0400</lastBuildDate><atom:link href="/tags/cyberchef/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Passage</title>
       <link>/writeup/htb/passage/</link>
