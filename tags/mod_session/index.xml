@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mod_session on 7own's blog</title><link>https://7own.github.io/tags/mod_session/</link><description>Recent content in Mod_session on 7own's blog</description><generator>Hugo</generator><language>en-us</language><copyright>© 7own</copyright><lastBuildDate>Thu, 29 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://7own.github.io/tags/mod_session/index.xml" rel="self" type="application/rss+xml"/><item><title>From Cookie Parser to Crash: Root Cause Analysis of CVE-2021-26690</title><link>https://7own.github.io/posts/cve-2021-26690-apache-mod-session-null-deref/</link><pubDate>Thu, 29 Aug 2024 00:00:00 +0000</pubDate><guid>https://7own.github.io/posts/cve-2021-26690-apache-mod-session-null-deref/</guid><description>&lt;h2 id="executive-summary"&gt;Executive Summary&lt;/h2&gt;
+&lt;p&gt;CVE-2021-26690 is a NULL pointer dereference vulnerability in Apache HTTP Server&amp;rsquo;s
+&lt;code&gt;mod_session&lt;/code&gt; module, affecting all versions from 2.4.0 through 2.4.46. An unauthenticated
+remote attacker can crash any Apache worker process by sending a single HTTP request
+carrying a malformed session cookie. Repeating that request exhausts the worker pool,
+resulting in a complete denial of service.&lt;/p&gt;
+&lt;p&gt;The root cause is a sequencing error in &lt;code&gt;session_identity_decode()&lt;/code&gt;: the value half of a
+cookie pair is parsed unconditionally before the key is validated for NULL. When a pair
+whose key is empty (e.g., &lt;code&gt;&amp;amp;=&lt;/code&gt;) reaches the parser, &lt;code&gt;apr_strtok&lt;/code&gt; returns NULL for the key
+without updating the internal &lt;code&gt;last&lt;/code&gt; pointer. The subsequent unconditional call to parse
+the value then dereferences that NULL pointer, crashing the process.&lt;/p&gt;</description></item></channel></rss>
