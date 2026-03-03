@@ -1,10 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Meta on 7own's blog</title><link>https://7own.github.io/tags/meta/</link><description>Recent content in Meta on 7own's blog</description><generator>Hugo</generator><language>en-us</language><copyright>© 7own</copyright><lastBuildDate>Tue, 03 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://7own.github.io/tags/meta/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://7own.github.io/posts/hello-world/</link><pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate><guid>https://7own.github.io/posts/hello-world/</guid><description>&lt;p&gt;Welcome to my blog! This is the first post — more content coming soon.&lt;/p&gt;
-&lt;h2 id="what-to-expect"&gt;What to expect&lt;/h2&gt;
-&lt;p&gt;This blog will cover topics like:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Software engineering &amp;amp; architecture&lt;/li&gt;
-&lt;li&gt;Security research&lt;/li&gt;
-&lt;li&gt;Tools &amp;amp; workflows&lt;/li&gt;
-&lt;li&gt;Anything else I find worth writing about&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Stay tuned.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meta on 7own&#39;s blog</title>
+    <link>http://localhost:1313/tags/meta/</link>
+    <description>Recent content in Meta on 7own&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© 7own</copyright>
+    <lastBuildDate>Tue, 03 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/meta/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <description>&lt;p&gt;Welcome to my blog! This is the first post — more content coming soon.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-to-expect&#34;&gt;What to expect&lt;/h2&gt;&#xA;&lt;p&gt;This blog will cover topics like:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Software engineering &amp;amp; architecture&lt;/li&gt;&#xA;&lt;li&gt;Security research&lt;/li&gt;&#xA;&lt;li&gt;Tools &amp;amp; workflows&lt;/li&gt;&#xA;&lt;li&gt;Anything else I find worth writing about&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Stay tuned.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

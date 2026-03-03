@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>0-Day on 7own's blog</title><link>https://7own.github.io/tags/0-day/</link><description>Recent content in 0-Day on 7own's blog</description><generator>Hugo</generator><language>en-us</language><copyright>© 7own</copyright><lastBuildDate>Tue, 03 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://7own.github.io/tags/0-day/index.xml" rel="self" type="application/rss+xml"/><item><title>CVE-2025-49630: Reachable Assertion in Apache mod_proxy_http2 — Discovered While Hunting CVE-2024-38477</title><link>https://7own.github.io/posts/cve-2025-49630-apache-mod-proxy-http2-assertion/</link><pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate><guid>https://7own.github.io/posts/cve-2025-49630-apache-mod-proxy-http2-assertion/</guid><description>&lt;h2 id="executive-summary"&gt;Executive Summary&lt;/h2&gt;
+&lt;p&gt;CVE-2025-49630 is a reachable assertion failure (CWE-617) in Apache HTTP Server&amp;rsquo;s
+&lt;code&gt;mod_proxy_http2&lt;/code&gt; module, affecting versions 2.4.0 through 2.4.63. When the server
+proxies requests to an HTTP/2 backend (&lt;code&gt;h2://&lt;/code&gt; or &lt;code&gt;h2c://&lt;/code&gt;), a specific CRLF sequence
+in the request URI causes &lt;code&gt;req-&amp;gt;authority&lt;/code&gt; to be NULL when it reaches an &lt;code&gt;ap_assert()&lt;/code&gt;
+call in &lt;code&gt;h2_proxy_util.c&lt;/code&gt;. The assertion fires, calling &lt;code&gt;abort()&lt;/code&gt; and killing the
+worker process.&lt;/p&gt;
+&lt;p&gt;The trigger is a single &lt;code&gt;netcat&lt;/code&gt; command. No authentication is required. No special
+application state is needed. The crash is deterministic across all affected versions
+and both h2 and h2c backend configurations.&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Patch-Diffing on 7own's blog</title><link>https://7own.github.io/tags/patch-diffing/</link><description>Recent content in Patch-Diffing on 7own's blog</description><generator>Hugo</generator><language>en-us</language><copyright>© 7own</copyright><lastBuildDate>Mon, 09 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://7own.github.io/tags/patch-diffing/index.xml" rel="self" type="application/rss+xml"/><item><title>1-Day Analysis: CVE-2024-38477 — NULL Pointer Dereference in Apache mod_proxy</title><link>https://7own.github.io/posts/cve-2024-38477-apache-mod-proxy-null-deref/</link><pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate><guid>https://7own.github.io/posts/cve-2024-38477-apache-mod-proxy-null-deref/</guid><description>&lt;h2 id="executive-summary"&gt;Executive Summary&lt;/h2&gt;
+&lt;p&gt;CVE-2024-38477 is a NULL pointer dereference in Apache HTTP Server&amp;rsquo;s &lt;code&gt;mod_proxy&lt;/code&gt; module,
+affecting versions 2.4.0 through 2.4.59. The vulnerability resides in
+&lt;code&gt;ap_proxy_determine_connection()&lt;/code&gt;: under specific edge cases, &lt;code&gt;apr_uri_parse()&lt;/code&gt; can return
+&lt;code&gt;APR_SUCCESS&lt;/code&gt; but leave &lt;code&gt;uri-&amp;gt;hostname&lt;/code&gt; as NULL. The function then dereferences that
+pointer without validation, crashing the worker process.&lt;/p&gt;
+&lt;p&gt;The fix shipped in 2.4.60 (2024-07-01) — a single null-check. The patch is unambiguous.
+What is less straightforward is what input actually triggers the vulnerable state in a
+real deployment.&lt;/p&gt;</description></item></channel></rss>
